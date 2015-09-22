@@ -1,10 +1,7 @@
 #!/usr/bin/env python
 
 import errno
-from xapi.storage import log
 import os
-import xapi
-import subprocess
 
 
 # Attempts to create an empty regular file with the given prefix and suffix

@@ -285,7 +285,7 @@ class Implementation(xapi.storage.api.volume.Volume_skeleton):
         new_name = touch_file_unique(dbg, path, "")
 
         # both cp --reflink and cp may require that the image is quiesced
-        ffs.poolhelper.suspend_datapath_in_pool(dbg, path)
+        xapi.storage.ffs.poolhelper.suspend_datapath_in_pool(dbg, path)
         try:
             code = subprocess.call(["cp", "--reflink=always", path, new_name])
             if code != 0:
@@ -294,7 +294,7 @@ class Implementation(xapi.storage.api.volume.Volume_skeleton):
                     os.unlink(new_name)
                     raise xapi.storage.api.volume.Unimplemented("Copy failed?")
         finally:
-            ffs.poolhelper.resume_datapath_in_pool(dbg, path)
+            xapi.storage.ffs.poolhelper.resume_datapath_in_pool(dbg, path)
 
         key = os.path.basename(new_name)
         uuid_ = str(uuid.uuid4())

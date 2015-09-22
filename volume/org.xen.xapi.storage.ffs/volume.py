@@ -163,7 +163,8 @@ class Implementation(xapi.storage.api.volume.Volume_skeleton):
             raise xapi.storage.api.volume.Volume_does_not_exist(key)
         size = os.stat(path).st_size
         if new_size < size:
-            raise xapi.storage.api.volume.Unimplemented("Shrinking is not supported")
+            raise xapi.storage.api.volume.Unimplemented(
+                "Shrinking is not supported")
         elif new_size == size:
             # No action needed
             pass

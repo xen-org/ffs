@@ -33,7 +33,8 @@ class Implementation(xapi.storage.api.volume.SR_skeleton):
                    u.netloc + ":" + u.path, mountpoint]
             code = subprocess.call(cmd)
             if code != 0:
-                raise xapi.storage.api.volume.Unimplemented(" ".join(cmd) + " failed")
+                raise xapi.storage.api.volume.Unimplemented(
+                    " ".join(cmd) + " failed")
         uri = "file://" + mountpoint
         return uri
 

@@ -105,7 +105,8 @@ class Implementation(xapi.storage.api.volume.SR_skeleton):
                              stderr=subprocess.PIPE)
         stdout, stderr = p.communicate()
         if p.returncode != 0:
-            raise xapi.storage.api.volume.Unimplemented("mkfs.btrfs failed on %s" % u.path)
+            raise xapi.storage.api.volume.Unimplemented(
+                "mkfs.btrfs failed on %s" % u.path)
         local_uri = self.attach(dbg, uri)
         with open(urlparse.urlparse(local_uri).path + "/.json", "w") as fd:
             meta = {

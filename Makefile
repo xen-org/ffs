@@ -14,11 +14,11 @@ XAPIPLUGINDIR?=/etc/xapi.d/plugins/
 .PHONY: install
 install:
 	mkdir -p $(DESTDIR)$(SCRIPTDIR)/volume/org.xen.xapi.storage.ffs
-	(cd volume/org.xen.xapi.storage.ffs; install -m 0755 $(FFS_COMMANDS) $(DESTDIR)$(SCRIPTDIR)/volume/org.xen.xapi.storage.ffs)
+	(cd volume/org.xen.xapi.storage.ffs; cp --no-dereference $(FFS_COMMANDS) $(DESTDIR)$(SCRIPTDIR)/volume/org.xen.xapi.storage.ffs)
 	mkdir -p $(DESTDIR)$(SCRIPTDIR)/volume/org.xen.xapi.storage.btrfs
-	(cd volume/org.xen.xapi.storage.btrfs; install -m 0755 $(BTRFS_COMMANDS) $(DESTDIR)$(SCRIPTDIR)/volume/org.xen.xapi.storage.btrfs)
+	(cd volume/org.xen.xapi.storage.btrfs; cp --no-dereference $(BTRFS_COMMANDS) $(DESTDIR)$(SCRIPTDIR)/volume/org.xen.xapi.storage.btrfs)
 	mkdir -p $(DESTDIR)$(SCRIPTDIR)/volume/org.xen.xapi.storage.rawnfs
-	(cd volume/org.xen.xapi.storage.rawnfs; install -m 0755 $(RAWNFS_COMMANDS) $(DESTDIR)$(SCRIPTDIR)/volume/org.xen.xapi.storage.rawnfs)
+	(cd volume/org.xen.xapi.storage.rawnfs; cp --no-dereference $(RAWNFS_COMMANDS) $(DESTDIR)$(SCRIPTDIR)/volume/org.xen.xapi.storage.rawnfs)
 	mkdir -p $(DESTDIR)$(PYTHONDIR)
 	(cd lib/ffs; install -m 0755 $(LIB_FILES) $(DESTDIR)$(PYTHONDIR)/)
 	mkdir -p $(DESTDIR)$(XAPIPLUGINDIR)

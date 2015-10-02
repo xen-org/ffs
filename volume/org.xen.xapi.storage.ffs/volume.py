@@ -12,6 +12,7 @@ import xapi.storage.api.volume
 from xapi.storage import log
 import xapi.storage.ffs.poolhelper
 from xapi.storage.ffs.common import touch_file_unique
+import xapi
 
 
 class Implementation(xapi.storage.api.volume.Volume_skeleton):
@@ -163,8 +164,10 @@ class Implementation(xapi.storage.api.volume.Volume_skeleton):
             raise xapi.storage.api.volume.Volume_does_not_exist(key)
         size = os.stat(path).st_size
         if new_size < size:
-            raise xapi.storage.api.volume.Unimplemented(
-                "Shrinking is not supported")
+            # Raise SMAPIv1 error VDISize
+            raise xapi.XenAPIException("SR_BACKEND_FAILURE_79",
+                                       ["VDI Invalid size",
+                                        "shrinking not allowed"])
         elif new_size == size:
             # No action needed
             pass

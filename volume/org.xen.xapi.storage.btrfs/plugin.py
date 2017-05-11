@@ -40,6 +40,7 @@ class Implementation(xapi.storage.api.plugin.Plugin_skeleton):
             "configuration": {},
             "required_cluster_stack": []}
 
+
 if __name__ == "__main__":
     log.log_call_argv()
     cmd = xapi.storage.api.plugin.Plugin_commandline(Implementation())

@@ -396,6 +396,7 @@ class Implementation(xapi.storage.api.volume.Volume_skeleton):
 
         return None
 
+
 if __name__ == "__main__":
     log.log_call_argv()
     cmd = xapi.storage.api.volume.Volume_commandline(Implementation())

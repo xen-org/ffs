@@ -8,6 +8,6 @@ install:
   #- pip install pylint --use-mirrors
   #- pip install nose --use-mirrors
 script:
-  - flake8 --show-source --show-pep8 .
+  - flake8 --show-source .
   #- pylint lib datapath volume
   #- nosetests

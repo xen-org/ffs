@@ -4,7 +4,7 @@ python:
 system_site_packages: true
 sudo: false
 install:
-  - pip install flake8 --use-mirrors
+  - pip install flake8
   #- pip install pylint --use-mirrors
   #- pip install nose --use-mirrors
 script:

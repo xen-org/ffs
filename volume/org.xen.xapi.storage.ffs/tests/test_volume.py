@@ -5,7 +5,7 @@ import unittest
 import util
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-import volume
+import volume  # noqa: E402
 
 
 class test_volume(unittest.TestCase):

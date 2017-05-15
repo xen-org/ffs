@@ -41,6 +41,7 @@ class TestXapi:
     volume = TestVolume()
     datapath = TestDatapath()
 
+
 sys.modules['xapi'] = TestXapi
 sys.modules['xapi.volume'] = TestVolume
 sys.modules['xapi.plugin'] = TestPlugin

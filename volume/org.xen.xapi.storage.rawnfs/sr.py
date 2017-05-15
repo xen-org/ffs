@@ -47,6 +47,7 @@ class Implementation(xapi.storage.api.volume.SR_skeleton):
             )
         return
 
+
 if __name__ == "__main__":
     log.log_call_argv()
     cmd = xapi.storage.api.volume.SR_commandline(Implementation())

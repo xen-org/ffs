@@ -4,7 +4,7 @@ import sys
 import unittest
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-import plugin
+import plugin  # noqa: E402
 
 
 class test_plugin(unittest.TestCase):

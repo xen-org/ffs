@@ -6,7 +6,7 @@ import util
 from . import TestSrnotattachedexception
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-import sr  # noqa
+import sr  # noqa: E402
 
 
 class test_sr(unittest.TestCase):

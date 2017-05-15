@@ -65,7 +65,7 @@ class Implementation(xapi.storage.api.volume.SR_skeleton):
                 "read_write": True,
                 "virtual_size": virtual_size,
                 "physical_utilisation": physical_utilisation,
-                "uri": ["raw+file:///" + path],
+                "uri": ["raw+file://" + path],
                 "keys": keys
             })
         return results
